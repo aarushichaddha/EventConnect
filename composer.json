@@ -1,0 +1,28 @@
+{
+    "name": "drupal/event_registration",
+    "description": "Custom Drupal 10 module for event registration with forms, email notifications, and admin management.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Aarushi Chaddha",
+            "email": "aarushichaddha0209@gmail.com"
+        }
+    ],
+    "require": {
+        "drupal/core": "^10"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Drupal\\event_registration\\": "src/"
+        }
+    },
+    "extra": {
+        "drupal": {
+            "version": "1.0.0",
+            "datestamp": "1706612400"
+        }
+    }
+}
