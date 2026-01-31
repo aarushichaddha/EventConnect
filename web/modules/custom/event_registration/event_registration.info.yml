@@ -1,0 +1,8 @@
+name: 'Event Registration'
+type: module
+description: 'Custom module for event registration with forms, email notifications, and admin management.'
+package: Custom
+core_version_requirement: ^10
+configure: event_registration.settings
+
+dependencies: []
