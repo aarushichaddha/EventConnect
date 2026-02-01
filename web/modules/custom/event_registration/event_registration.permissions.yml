@@ -1,0 +1,11 @@
+# Custom permissions for Event Registration module
+
+administer event registration:
+  title: 'Administer Event Registration'
+  description: 'Configure event registration settings and manage events.'
+  restrict access: TRUE
+
+view event registrations:
+  title: 'View Event Registrations'
+  description: 'Access the admin page to view all event registrations.'
+  restrict access: TRUE
