@@ -1,0 +1,29 @@
+# Admin menu links for Event Registration module
+
+event_registration.admin:
+  title: 'Event Registration'
+  description: 'Configure event registration settings.'
+  route_name: event_registration.settings
+  parent: system.admin_config
+  weight: 50
+
+event_registration.settings:
+  title: 'Settings'
+  description: 'Configure event registration email settings.'
+  route_name: event_registration.settings
+  parent: event_registration.admin
+  weight: 10
+
+event_registration.event_config:
+  title: 'Event Configuration'
+  description: 'Add and manage events.'
+  route_name: event_registration.event_config_form
+  parent: event_registration.admin
+  weight: 20
+
+event_registration.registrations:
+  title: 'View Registrations'
+  description: 'View all event registrations.'
+  route_name: event_registration.admin_listing
+  parent: event_registration.admin
+  weight: 30

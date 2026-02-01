@@ -1,0 +1,156 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Event Registration module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function event_registration_schema() {
+  $schema = [];
+
+  // Event Configuration table.
+  $schema['event_registration_config'] = [
+    'description' => 'Stores event configuration details.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary Key: Unique event configuration ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'registration_start_date' => [
+        'description' => 'Event registration start date.',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ],
+      'registration_end_date' => [
+        'description' => 'Event registration end date.',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ],
+      'event_date' => [
+        'description' => 'The date of the event.',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ],
+      'event_name' => [
+        'description' => 'Name of the event.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'event_category' => [
+        'description' => 'Category of the event.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'description' => 'Timestamp when the event was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'event_date' => ['event_date'],
+      'event_category' => ['event_category'],
+      'registration_dates' => ['registration_start_date', 'registration_end_date'],
+    ],
+  ];
+
+  // Event Registrations table.
+  $schema['event_registration_submissions'] = [
+    'description' => 'Stores event registration submissions.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary Key: Unique registration ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'full_name' => [
+        'description' => 'Full name of the registrant.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'description' => 'Email address of the registrant.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'college_name' => [
+        'description' => 'College name of the registrant.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'department' => [
+        'description' => 'Department of the registrant.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'event_category' => [
+        'description' => 'Category of the event.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'event_config_id' => [
+        'description' => 'Foreign key to event_registration_config.id.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'description' => 'Timestamp when the registration was submitted.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'email' => ['email'],
+      'event_config_id' => ['event_config_id'],
+      'email_event' => ['email', 'event_config_id'],
+    ],
+    'foreign keys' => [
+      'event_config' => [
+        'table' => 'event_registration_config',
+        'columns' => ['event_config_id' => 'id'],
+      ],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function event_registration_install() {
+  // Set default configuration values.
+  \Drupal::configFactory()->getEditable('event_registration.settings')
+    ->set('admin_email', '')
+    ->set('enable_admin_notifications', TRUE)
+    ->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function event_registration_uninstall() {
+  // Delete module configuration.
+  \Drupal::configFactory()->getEditable('event_registration.settings')->delete();
+}
