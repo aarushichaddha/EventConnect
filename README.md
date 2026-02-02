@@ -323,6 +323,10 @@ event_registration/
 - Ensure user has appropriate permissions assigned
 - Clear cache after changing permissions
 
+### Screenshots
+
+![Event Configuration](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223631.png)
+
 ## License
 
 This module is licensed under GPL-2.0-or-later.
