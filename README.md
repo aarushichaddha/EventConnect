@@ -325,7 +325,22 @@ event_registration/
 
 ### Screenshots
 
+#### Event Configuration : 
 ![Event Configuration](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223631.png)
+![Event Configuration](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223648.png)
+![Event Configuration](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223702.png)
+
+#### Event Registration :
+![Event Registration](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223826.png)
+![Event Registration](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223841.png)
+![Event Registration](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223923.png)
+
+#### Database :
+![Database](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20223949.png)
+![Database](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20224022.png)
+
+#### Mail Notification :
+![Mail](https://github.com/aarushichaddha/EventConnect/blob/main/screenshots/Screenshot%202026-02-02%20224144.png)
 
 ## License
 
